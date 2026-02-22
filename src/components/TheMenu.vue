@@ -1,3 +1,7 @@
+<script>
+import { RouterLink } from 'vue-router'
+</script>
+
 <template>
   <div class="menu">
     <RouterLink to="/" custom v-slot="{ isActive, navigate }">
@@ -27,7 +31,3 @@
     </RouterLink>
   </div>
 </template>
-
-<script>
-import { RouterLink } from 'vue-router'
-</script>
