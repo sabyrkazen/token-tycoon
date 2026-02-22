@@ -13,7 +13,16 @@ const levelScores = levels.map((value) => {
   return sum
 })
 
-console.log(levelScores)
+const computeLevelByScore = (score) => {
+  for (let [index, value] of levelScores.entries()) {
+    if (score <= value) {
+      return {
+        level: index,
+        value: levels[index],
+      }
+    }
+  }
+}
 
 export const useScoreStore = defineStore('score', {
   state: () => ({
