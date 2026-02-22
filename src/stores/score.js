@@ -28,4 +28,22 @@ export const useScoreStore = defineStore('score', {
   state: () => ({
     score: 0,
   }),
+  getters: {
+    level: (state) => computeLevelByScore(state.score),
+    currentScore(state) {
+      if (this.level.level === 0) {
+        return state.score
+      }
+
+      return state.score - levelScores[this.level.level - 1]
+    },
+  },
+  actions: {
+    add(score = 1) {
+      this.score += score
+    },
+    setScore(score) {
+      this.score = score
+    },
+  },
 })
