@@ -8,7 +8,7 @@ import frog from '@/assets/frog.png'
 import lizard from '@/assets/lizard.png'
 
 const img = ref(null)
-const imgSrc = computed(() => (store.score >= baseLevelScore ? lizard : frog))
+const imgSrc = computed(() => (store.score > baseLevelScore ? lizard : frog))
 
 const store = useScoreStore()
 
