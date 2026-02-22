@@ -14,11 +14,8 @@
 <script setup>
 import { ref } from 'vue'
 import ScoreProgress from '@/components/ScoreProgress.vue'
-import { useScoreStore } from '@/stores/score'
 
 const img = ref(null)
-
-const store = useScoreStore()
 
 function increment(event) {
   const rect = event.target.getBoundingClientRect()
