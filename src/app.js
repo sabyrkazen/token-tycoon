@@ -13,7 +13,7 @@ function setScore(score) {
 
 function setImage() {
   if (getScore() >= 50) {
-    $circle.setAttribute('src', './assets/sabyrka.svg')
+    $circle.setAttribute('src', './assets/new-pfp.jpg')
   }
 }
 
