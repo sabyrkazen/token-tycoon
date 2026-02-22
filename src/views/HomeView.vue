@@ -8,6 +8,7 @@ const img = ref(null)
 const store = useScoreStore()
 
 function increment(event) {
+  store.add(1)
   const rect = event.target.getBoundingClientRect()
 
   const offfsetX = event.clientX - rect.left - rect.width / 2
