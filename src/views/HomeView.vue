@@ -1,21 +1,11 @@
-<template>
-  <div class="game-container">
-    <ScoreProgress />
-    <div class="header">
-      <img src="../assets/coin.png" alt="coin" />
-      <h2 class="score" id="score">42</h2>
-    </div>
-    <div class="circle">
-      <img @click="increment" ref="img" id="circle" src="../assets/frog.png" />
-    </div>
-  </div>
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import ScoreProgress from '@/components/ScoreProgress.vue'
+import { useScoreStore } from '@/stores/score'
 
 const img = ref(null)
+
+const store = useScoreStore()
 
 function increment(event) {
   const rect = event.target.getBoundingClientRect()
@@ -47,3 +37,16 @@ function increment(event) {
   setTimeout(() => plusOne.remove(), 2000)
 }
 </script>
+
+<template>
+  <div class="game-container">
+    <ScoreProgress />
+    <div class="header">
+      <img src="../assets/coin.png" alt="coin" />
+      <h2 class="score" id="score">{{ store.score }}</h2>
+    </div>
+    <div class="circle">
+      <img @click="increment" ref="img" id="circle" src="../assets/frog.png" />
+    </div>
+  </div>
+</template>
