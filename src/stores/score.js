@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-const baseLevelScore = 25
+export const baseLevelScore = 25
 
 const levels = new Array(15)
   .fill(0)
